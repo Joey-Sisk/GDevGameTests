@@ -96,6 +96,15 @@
         "name": "NewObject-1-1.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewObject-1-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-2.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -352,7 +361,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "NewObject-1-1.png",
+                      "image": "NewObject-1-2.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -389,6 +398,41 @@
               "parameters": [
                 "Player",
                 "DungeonWall",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "TopDownMovementBehavior::IsMoving"
+              },
+              "parameters": [
+                "Player",
+                "TopDownMovement"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "RotateTowardPosition"
+              },
+              "parameters": [
+                "Turret",
+                "Turret.AngleToObject(Player)",
+                "Turret.AngleToObject(Player)",
+                "10",
                 ""
               ],
               "subInstructions": []
